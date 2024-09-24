@@ -1,0 +1,12 @@
+general:
+  Name: "BONK"
+  Lore: "Not a normal stick"
+  bonk-item: "STICK" # Valid values: Any material name from the Material enum in Spigot
+  knockback-strength: 1.0 # Strength of knockback (default: 1.0)
+  damage: 0.0 # Amount of damage (default: 0.0)
+
+messages:
+  notplayer: "This command can only be used by players."
+  nopermission: "You do not have permission to use this command."
+  bonkreceive: "You have received the Bonk Stick!"
+  reload: "BONK plugin configuration reloaded successfully!"

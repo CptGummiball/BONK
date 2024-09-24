@@ -1,0 +1,18 @@
+name: BONK
+version: '1.0'
+main: org.cptgummiball.bonk.BONK
+api-version: '1.20'
+authors: [ cptgummiball ]
+description: "A simple plugin that provides a unique Bonk Bonk Item to knock back entities."
+commands:
+  bonk:
+    description: "Gives the player the Bonk Item or reloads the configuration."
+    usage: "/bonk [reload]"
+permissions:
+  bonk.get:
+    description: "Allows a player to use the /bonk command to receive the Bonk Item."
+    default: op
+  bonk.reload:
+    description: "Allows reloading of the BONK plugin configuration."
+    default: op
+
