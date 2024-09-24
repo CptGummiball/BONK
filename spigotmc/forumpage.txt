@@ -1,0 +1,76 @@
+[center][size=6][b]BONK[/b][/size][/center]
+[img]https://img.shields.io/badge/Spigot-1.20--1.21.1-yellow.svg[/img]
+[img]https://img.shields.io/badge/PaperMC-1.20--1.21.1-blue.svg[/img]
+[img]https://img.shields.io/badge/Version-1.0-lightgray.svg[/img]
+[img]https://img.shields.io/badge/License-MIT-green.svg[/img]
+
+[i]A simple Spigot [b]1.20+[/b] plugin that provides a unique item, the [b]BONK[/b], which knocks back entities and optionally deals configurable damage. The [b]BONK[/b] is designed for server administrators or players with special permissions to push mobs, players, or animals around in a fun and efficient way.[/i]
+
+[center][size=5][b]Features[/b][/size][/center]
+[list]
+[*][b]Unique Bonk Item:[/b] Only the specially created Bonk Item can knock back entities.
+[*][b]Custom Knockback Strength:[/b] Configurable in config.yml.
+[*][b]Custom Damage:[/b] Set damage amount (including zero damage) in config.yml.
+[*][b]Item Type Customization:[/b] Change the default Bonk item to any item type you prefer.
+[*][b]Permission Protected:[/b] Only players with the correct permission can obtain the Bonk Item.
+[/list]
+
+[center][size=5][b]Why use BONK?[/b][/size][/center]
+[i]The BONK plugin is perfect for situations where:[/i]
+[list]
+[*]You need to discipline or manage players.
+[*]Mobs are becoming a nuisance.
+[*]You want to herd animals back into pens.
+[*]You want to have fun and lightly push things around without dealing excessive damage.
+[/list]
+
+[center][size=5][b]Installation[/b][/size][/center]
+[list]
+[*]Download the .jar file from the releases section or build it from the source code.
+[*]Place the .jar file in your server's plugins folder.
+[*]Start or reload your server.
+[*]A [code]config.yml[/code] file will be automatically generated. Adjust the settings as needed.
+[*]Reload the plugin with [code]/bonk reload[/code].
+[/list]
+
+[center][size=5][b]Configuration[/b][/size][/center]
+[i]The [code]config.yml[/code] file allows you to modify the Bonk Stick's behavior and change the in-game messages:[/i]
+[code]
+general:
+  Name: "BONK"
+  Lore: "Not a normal stick"
+  bonk-item: "STICK" # Valid values: Any material name from the Material enum in Spigot
+  knockback-strength: 1.0 # Strength of knockback (default: 1.0)
+  damage: 0.0 # Amount of damage (default: 0.0)
+
+messages:
+  notplayer: "This command can only be used by players."
+  nopermission: "You do not have permission to use this command."
+  bonkreceive: "You have received the Bonk Stick!"
+  reload: "BONK plugin configuration reloaded successfully!"
+[/code]
+
+[center][size=5][b]Commands[/b][/size][/center]
+[list]
+[*][code]/bonk[/code]: Gives the player the unique Bonk Stick. Requires the [b]bonk.get[/b] permission.
+[*][code]bonk reload[/code]: Reloads the plugin's config.
+[/list]
+
+[center][size=5][b]Permissions[/b][/size][/center]
+[list]
+[*][code]bonk.get[/code]: Allows a player to use the [code]/bonk[/code] command to receive the Bonk Stick. By default, only operators (op) have this permission.
+[*][code]bonk.reload[/code]: Allows reloading of the BONK plugin configuration.
+[/list]
+
+[center][size=5][b]Usage[/b][/size][/center]
+[list]
+[*]Use the [code]/bonk[/code] command to receive the Bonk Stick.
+[*]Right-click or left-click an entity (e.g., mob, player, or animal) to knock it back with the configured strength.
+[*]The configured damage will also be applied (if set in the config).
+[/list]
+
+[center][size=5][b]Contributing[/b][/size][/center]
+[i]Feel free to open [url=https://github.com/CptGummiball/BONK/issues]issues[/url], fork the [url=https://github.com/CptGummiball/BONK]plugin repository[/url], and submit pull requests for any improvements or bug fixes. Contributions are always welcome![/i]
+
+[center][size=5][b]License[/b][/size][/center]
+[i]This project is licensed under the MIT License - see the [url=https://github.com/CptGummiball/BONK/blob/main/LICENSE]LICENSE[/url] file for details.[/i]
