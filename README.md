@@ -1,4 +1,8 @@
 # BONK
+![Spigot](https://img.shields.io/badge/Spigot-1.20--1.21.1-yellow.svg)
+![MIT License](https://img.shields.io/badge/PaperMC-1.20--1.21.1-blue.svg)
+![Version](https://img.shields.io/badge/Version-1.0-lightgray.svg)
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
 A simple Spigot **1.20+** plugin that provides a unique item, the **BONK**, which knocks back entities and optionally deals configurable damage. The **BONK** is designed for server administrators or players with special permissions to push mobs, players, or animals around in a fun and efficient way.
 
