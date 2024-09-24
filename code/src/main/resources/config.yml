@@ -1,12 +1,51 @@
+version: 1.1
 general:
+  # Texts
   Name: "BONK"
   Lore: "Not a normal stick"
+  NameColor: GOLD # Valid values: Any color from the ChatColor enum in Spigot
+  LoreColor: GRAY # Valid values: Any color from the ChatColor enum in Spigot
   bonk-item: "STICK" # Valid values: Any material name from the Material enum in Spigot
+
+  global-chat-message: true # If true, a global chat message will be displayed if a player got hit by BONK
+
+  # Properties
   knockback-strength: 1.0 # Strength of knockback (default: 1.0)
   damage: 0.0 # Amount of damage (default: 0.0)
+  setonfire: false # If set to true, the target will be set on fire
+  fire-duration: 5 # Duration in seconds
 
+  # Effects
+  effect-enabled: true
+  knockback-effect: "PARTICLE_EFFECT" # Valid values: Any Particle from the Particle enum in Spigot
+
+  sound-enabled: true
+  bonk-sound-player: "ENTITY_PLAYER_LEVELUP" # Valid values: Any sound from the Sound enum in Spigot
+  bonk-sound-target: "ENTITY_GENERIC_HURT" # Valid values: Any sound from the Sound enum in Spigot
+
+  firework-on-hit: false
+  main-color: "FF0000"   # Main Color in HEX
+  fade-color: "FFFF00"    # ColorChange in (Hex)
+  effect-type: "BALL"     # Type of Effect (BALL, STAR, CREEPER, BURST)
+  power: 1                # Explosion radius (1-3)
+
+# Custom Texture
+  use-custom-texture: false # If you want to use custom texture for BONK make sure you placed a file named "texture.png" in the customtexture folder.
+  CustomModelData: 49721 # Change this only if there are problems with other Resourcepacks
+
+# lang
 messages:
+  bonked: "{target} got bonked by {player}!"
   notplayer: "This command can only be used by players."
   nopermission: "You do not have permission to use this command."
   bonkreceive: "You have received the Bonk Stick!"
   reload: "BONK plugin configuration reloaded successfully!"
+  invalidparticle: "Invalid particle effect in config: "
+  invalidsound: "Invalid sound name in config."
+
+
+# Useful Links:
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/ChatColor.html

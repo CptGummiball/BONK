@@ -1,16 +1,18 @@
 # BONK
 ![Spigot](https://img.shields.io/badge/Spigot-1.20--1.21.1-yellow.svg)
-![MIT License](https://img.shields.io/badge/PaperMC-1.20--1.21.1-blue.svg)
-![Version](https://img.shields.io/badge/Version-1.0-lightgray.svg)
+![Paper](https://img.shields.io/badge/PaperMC-1.20--1.21.1-blue.svg)
+![Version](https://img.shields.io/badge/Version-1.1-lightgray.svg)
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
-A simple Spigot **1.20+** plugin that provides a unique item, the **BONK**, which knocks back entities and optionally deals configurable damage. The **BONK** is designed for server administrators or players with special permissions to push mobs, players, or animals around in a fun and efficient way.
+A fun and versatile Spigot **1.20+** plugin, BONK introduces a unique item that not only knocks back entities but also offers a range of exciting features. This plugin allows you to ignite targets, create stunning visual effects as they fly away, and play customizable sound effects for both the attacker and the target. Additionally, it can broadcast a message to all players in the chat whenever someone gets bonked. Perfectly designed for server administrators and players with special permissions, **BONK** empowers you to manage mobs, players, and animals in a playful and efficient way.
 
 ## Features
 - **Unique Bonk Item:** Only the specially created Bonk Item can knock back entities.
 - **Custom Knockback Strength:** Configurable in config.yml.
 - **Custom Damage:** Set damage amount (including zero damage) in config.yml.
+- **Optional Fire Damage:** Fire Damage can be activated.
 - **Item Type Customization:** Change the default Bonk item to any item type you prefer.
+- **Optional Effects:** Optional Effects like Sound, Firework, Particles
 - **Permission Protected:** Only players with the correct permission can obtain the Bonk Item.
 
 ## Why use BONK?
@@ -34,18 +36,57 @@ A simple Spigot **1.20+** plugin that provides a unique item, the **BONK**, whic
 The ``config.yml`` file allows you to modify the Bonk Stick's behavior and change the ingame messages:
 
 ```yaml
+version: 1.1
 general:
+  # Texts
   Name: "BONK"
   Lore: "Not a normal stick"
+  NameColor: GOLD # Valid values: Any color from the ChatColor enum in Spigot
+  LoreColor: GRAY # Valid values: Any color from the ChatColor enum in Spigot
   bonk-item: "STICK" # Valid values: Any material name from the Material enum in Spigot
+
+  global-chat-message: true # If true, a global chat message will be displayed if a player got hit by BONK
+
+  # Properties
   knockback-strength: 1.0 # Strength of knockback (default: 1.0)
   damage: 0.0 # Amount of damage (default: 0.0)
+  setonfire: false # If set to true, the target will be set on fire
+  fire-duration: 5 # Duration in seconds
 
+  # Effects
+  effect-enabled: true
+  knockback-effect: "PARTICLE_EFFECT" # Valid values: Any Particle from the Particle enum in Spigot
+
+  sound-enabled: true
+  bonk-sound-player: "ENTITY_PLAYER_LEVELUP" # Valid values: Any sound from the Sound enum in Spigot
+  bonk-sound-target: "ENTITY_GENERIC_HURT" # Valid values: Any sound from the Sound enum in Spigot
+
+  firework-on-hit: false
+  main-color: "FF0000"   # Main Color in HEX
+  fade-color: "FFFF00"    # ColorChange in (Hex)
+  effect-type: "BALL"     # Type of Effect (BALL, STAR, CREEPER, BURST)
+  power: 1                # Explosion radius (1-3)
+
+  # Custom Texture
+  use-custom-texture: false # If you want to use custom texture for BONK make sure you placed a file named "texture.png" in the customtexture folder.
+  CustomModelData: 49721 # Change this only if there are problems with other Resourcepacks
+
+# lang
 messages:
+  bonked: "{target} got bonked by {player}!"
   notplayer: "This command can only be used by players."
   nopermission: "You do not have permission to use this command."
   bonkreceive: "You have received the Bonk Stick!"
   reload: "BONK plugin configuration reloaded successfully!"
+  invalidparticle: "Invalid particle effect in config: "
+  invalidsound: "Invalid sound name in config."
+
+
+  # Useful Links:
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/ChatColor.html
 ````
 
 ## Commands
